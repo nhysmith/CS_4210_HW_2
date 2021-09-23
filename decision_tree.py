@@ -12,6 +12,7 @@
 from sklearn import tree
 import csv
 
+#dataSets = ['CS_4210_HW_2/contact_lens_training_1.csv']
 dataSets = ['CS_4210_HW_2/contact_lens_training_1.csv', 'CS_4210_HW_2/contact_lens_training_2.csv', 'CS_4210_HW_2/contact_lens_training_3.csv']
 
 for ds in dataSets:
@@ -62,9 +63,9 @@ for ds in dataSets:
     #print(Y)
 
     #loop your training and test tasks 10 times here
-    accuracyList = [0]*10
+    accuracyList = []
     for i in range (10):
-
+        print('Iteration: ',i)
         #fitting the decision tree to the data setting max_depth=3
         clf = tree.DecisionTreeClassifier(criterion = 'entropy', max_depth=3)
         clf = clf.fit(X, Y)
@@ -88,6 +89,7 @@ for ds in dataSets:
            #transform the features of the test instances to numbers following the same strategy done during training, and then use the decision tree to make the class prediction. For instance:
            #class_predicted = clf.predict([[3, 1, 2, 1]])[0]           -> [0] is used to get an integer as the predicted class label so that you can compare it with the true label
            #--> add your Python code here
+            print('Data: ', data)
             for j in range(4):
                 if data[j] == 'Young' or data[j] == 'Myope' or data[j] == 'Yes' or data[j] == 'Normal':
                     temp[j] = '1'
@@ -98,37 +100,38 @@ for ds in dataSets:
                 else:
                     print(data[j])
                     temp[j] = '?'
-            print(temp)
+            print('Numeric: ',temp)
             class_predicted = clf.predict([temp])[0]
-            print(class_predicted)
+            print('Class predicted: ',class_predicted)
+            print('Actual Class: ',data[4])
 
            #compare the prediction with the true label (located at data[4]) of the test instance to start calculating the accuracy.
            #--> add your Python code here
             if class_predicted == '1':
                 if data[4] == 'Yes':
-                    #print('True positive')
+                    print('True positive')
                     TP+=1
                 else:
-                    #print('False positive')
+                    print('False positive')
                     FP+=1
             else:
                 if data[4] == 'No':
-                    #print('True negative')
+                    print('True negative')
                     TN+=1
                 else:
-                    #print('False negative')
+                    print('False negative')
                     FP+=1
         
-        #print('TP = ',TP)              
-        #print('TN = ',TN)  
-        #print('FP = ',FP)  
-        #print('FN = ',FN)  
+        print('TP = ',TP)              
+        print('TN = ',TN)  
+        print('FP = ',FP)  
+        print('FN = ',FN)  
 
         accuracy = (TP + TN)/(TP + TN + FP + FN)
-        #print('Accuracy = ',accuracy)
+        print('Accuracy = ',accuracy)
 
-        accuracyList[i]=accuracy
-        #print(accuracyList)
+        accuracyList.append(accuracy)
+        print('List: ',accuracyList)
         
         #find the lowest accuracy of this model during the 10 runs (training and test set)
         #--> add your Python code here
