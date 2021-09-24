@@ -3,7 +3,7 @@
 # FILENAME: naive_bayes.py
 # SPECIFICATION: description of the program
 # FOR: CS 4210- Assignment #2
-# TIME SPENT: how long it took you to complete the assignment
+# TIME SPENT: 1.5 hrs
 #-----------------------------------------------------------*/
 
 #IMPORTANT NOTE: DO NOT USE ANY ADVANCED PYTHON LIBRARY TO COMPLETE THIS CODE SUCH AS numpy OR pandas. You have to work here only with standard vectors and arrays
@@ -95,9 +95,15 @@ for (data, display) in zip(testData, displayData):
     #print(data)
     predicted = clf.predict_proba([data])[0]
     if predicted[0] >= .75:
-        print(display, 'Yes'.ljust(15),predicted[0])
+        tempString = ''
+        for i in display:
+            tempString+= i.ljust(15)
+        print(tempString, 'Yes'.ljust(15),predicted[0])
     elif predicted[1] >= .75:
-        print(display,'No'.ljust(15),predicted[1])
+        tempString = ''
+        for i in display:
+            tempString+= i.ljust(15)
+        print(tempString,'No'.ljust(15),predicted[1])
 
         
     
