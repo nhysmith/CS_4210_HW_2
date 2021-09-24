@@ -98,13 +98,9 @@ for (data, display) in zip(testData, displayData):
         tempString = ''
         for i in display:
             tempString+= i.ljust(15)
-        print(tempString, 'Yes'.ljust(15),predicted[0])
+        print(tempString, "Yes".ljust(15),"{:.2f}".format(predicted[0]))
     elif predicted[1] >= .75:
         tempString = ''
         for i in display:
             tempString+= i.ljust(15)
-        print(tempString,'No'.ljust(15),predicted[1])
-
-        
-    
-
+        print(tempString,"No".ljust(15),"{:.2f}".format(predicted[1]))
