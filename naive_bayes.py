@@ -1,7 +1,10 @@
 #-------------------------------------------------------------------------
 # AUTHOR: Nishara Hysmth
 # FILENAME: naive_bayes.py
-# SPECIFICATION: description of the program
+# SPECIFICATION: This program reads in a training instance csv file and uses naive Bayes to train the model. 
+#A test instance file is read in, the instances are classified, and the program only displays the test instances that have 
+#class predictions with a confidence of .75 or greater.
+
 # FOR: CS 4210- Assignment #2
 # TIME SPENT: 1.5 hrs
 #-----------------------------------------------------------*/
