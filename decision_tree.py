@@ -1,7 +1,9 @@
 #-------------------------------------------------------------------------
 # AUTHOR: Nishara Hysmith
 # FILENAME: decision_tree.py
-# SPECIFICATION: description of the program
+# SPECIFICATION: This program reads through an array of training data set csv files. For each file, the model is trained and tested ten times. 
+#The accuracy of the model is stored in an array and at the end of the 10 iterations, the lowest accuracy value is displayed.
+
 # FOR: CS 4210- Assignment #2
 # TIME SPENT: 2 hours
 #-----------------------------------------------------------*/
