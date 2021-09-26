@@ -1,7 +1,10 @@
 #-------------------------------------------------------------------------
 # AUTHOR: Nishara Hysmith
 # FILENAME: knn.py
-# SPECIFICATION: description of the program
+# SPECIFICATION: This program iterates through 10 data points and uses each point as a test instance and finds its 1NN, single nearest neighbor. 
+#Using the nearest neighbor's class, the instance is classified. 
+#The number of incorrect classifications are divided by the total number of classifications to find the error rate. Finally the error rate is displayed.
+
 # FOR: CS 4210- Assignment #2
 # TIME SPENT: 1hr
 #-----------------------------------------------------------*/
